@@ -31,7 +31,6 @@ requirements:
     - wheel
   run:
     - python >=3.6
-    - typing >=3.6,<4.0
 
 test:
   requires:
