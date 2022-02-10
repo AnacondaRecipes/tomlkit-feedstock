@@ -47,7 +47,8 @@ about:
   license_file: LICENSE
   summary: Style preserving TOML library
   dev_url: https://github.com/sdispater/tomlkit
-  doc_url: https://github.com/sdispater/tomlkit/blob/master/docs/quickstart.rst
+  doc_url: https://github.com/sdispater/tomlkit/blob/master/README.md
+  doc_source_url: https://github.com/sdispater/tomlkit/blob/master/docs/quickstart.rst
 
 extra:
   recipe-maintainers:
