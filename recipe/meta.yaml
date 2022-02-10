@@ -1,21 +1,25 @@
-{% set version = "0.7.2" %}
+{% set name = "tomlkit" %}
+{% set version = "0.9.2" %}
 
 package:
-  name: tomlkit
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/t/tomlkit/tomlkit-{{ version }}.tar.gz
-  sha256: d7a454f319a7e9bd2e249f239168729327e4dd2d27b17dc68be264ad1ce36754
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tomlkit-{{ version }}.tar.gz
+  sha256: ebd982d61446af95a1e082b103e250cb9e6d152eae2581d4a07d31a70b34ab0f
 
 build:
-  number: 1
+  number: 0
+  noarch: python
   script:
     # Somehow, when pyproject.toml is present, it requires poetry on Windows.
     # However, even with that dependency satisfied, we get:
     # "tomlkit cannot depend on itself"
     - del pyproject.toml  # [win]
     - rm pyproject.toml  # [not win]
+    # Causes ClobberWarnings. Remove after https://github.com/sdispater/tomlkit/issues/69
+    - rm -rf tests  # [not win]
     - {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
 
 requirements:
@@ -26,10 +30,7 @@ requirements:
     - setuptools
     - wheel
   run:
-    - python
-    - typing >=3.6,<4.0  # [py<35]
-    - enum34 >=1.1,<2.0  # [py27]
-    - functools32 >=3.2.3,<4.0.0  # [py27]
+    - python >=3.6
 
 test:
   requires:
@@ -46,6 +47,8 @@ about:
   license_file: LICENSE
   summary: Style preserving TOML library
   dev_url: https://github.com/sdispater/tomlkit
+  doc_url: https://github.com/sdispater/tomlkit/blob/master/README.md
+  doc_source_url: https://github.com/sdispater/tomlkit/blob/master/docs/quickstart.rst
 
 extra:
   recipe-maintainers:
