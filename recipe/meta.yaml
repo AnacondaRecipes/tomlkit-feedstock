@@ -12,7 +12,6 @@ source:
 build:
   number: 0
   skip: True  # [py<36]
-  noarch: python
   script:
     # Somehow, when pyproject.toml is present, it requires poetry on Windows.
     # However, even with that dependency satisfied, we get:
