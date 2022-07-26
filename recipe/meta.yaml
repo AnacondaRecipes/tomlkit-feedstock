@@ -11,6 +11,7 @@ source:
 
 build:
   number: 0
+  skip: True  # [py<36]
   noarch: python
   script:
     # Somehow, when pyproject.toml is present, it requires poetry on Windows.
@@ -27,7 +28,6 @@ requirements:
     - pip
     - poetry-core >=1.0.0a9
     - python
-    - setuptools
     - wheel
   run:
     - python >=3.6
