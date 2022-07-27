@@ -11,7 +11,7 @@ source:
 
 build:
   number: 0
-  skip: True  # [py<36]
+  skip: True  # [py<37]
   script:
     # Somehow, when pyproject.toml is present, it requires poetry on Windows.
     # However, even with that dependency satisfied, we get:
@@ -29,7 +29,7 @@ requirements:
     - python
     - wheel
   run:
-    - python >=3.6
+    - python
 
 test:
   requires:
