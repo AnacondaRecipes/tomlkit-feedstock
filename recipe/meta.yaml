@@ -32,14 +32,14 @@ test:
     - tomlkit
 
 about:
-  home: https://github.com/sdispater/tomlkit
+  home: https://github.com/python-poetry/tomlkit
   license: MIT
   license_family: MIT
   license_file: LICENSE
   summary: Style preserving TOML library
-  dev_url: https://github.com/sdispater/tomlkit
-  doc_url: https://github.com/sdispater/tomlkit/blob/master/README.md
-  doc_source_url: https://github.com/sdispater/tomlkit/blob/master/docs/quickstart.rst
+  dev_url: https://github.com/python-poetry/tomlkit
+  doc_url: https://github.com/python-poetry/tomlkit/blob/master/README.md
+  doc_source_url: https://github.com/python-poetry/tomlkit/blob/master/docs/quickstart.rst
 
 extra:
   recipe-maintainers:
