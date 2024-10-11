@@ -1,7 +1,7 @@
 About tomlkit
 =============
 
-Home: https://github.com/sdispater/tomlkit
+Home: https://github.com/python-poetry/tomlkit
 
 Package license: MIT
 
